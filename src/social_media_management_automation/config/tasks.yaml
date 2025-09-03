@@ -1,0 +1,49 @@
+---
+research_industry_trends:
+  description: Research and analyze current trending topics, hashtags, and viral content
+    patterns in {industry}. Focus on identifying content opportunities that align
+    with {company_name}'s brand and could drive high engagement across {target_platforms}.
+    Look for emerging trends, seasonal topics, and industry-specific discussions that
+    are gaining traction.
+  expected_output: A comprehensive report containing 10-15 trending topics relevant
+    to {industry}, including specific hashtags, content angles, and engagement potential.
+    Each trend should include a brief explanation, recommended content approach, and
+    estimated audience interest level.
+  agent: trend_research_analyst
+analyze_performance_metrics:
+  description: Analyze historical social media performance data for {company_name}
+    to identify patterns in engagement, optimal posting times, and high-performing
+    content types. Review past posts' performance across {target_platforms} to understand
+    what content resonates best with the audience and when they are most active.
+  expected_output: A detailed analytics report with optimal posting times for each
+    platform, top-performing content types, engagement patterns by day/time, and recommendations
+    for content strategy improvements. Include specific time slots for each platform
+    and audience engagement insights.
+  agent: social_media_analytics_specialist
+create_content_calendar:
+  description: Based on the trending topics research and performance analytics, create
+    a comprehensive social media content calendar for {company_name}. Develop engaging
+    content ideas that incorporate trending topics while maintaining brand consistency.
+    Plan content for the next 30 days across {target_platforms}, ensuring optimal
+    timing and platform-specific formatting.
+  expected_output: A detailed 30-day content calendar in spreadsheet format with columns
+    for date, time, platform, content type, post text, hashtags, visual requirements,
+    and expected engagement metrics. Include 3-5 posts per day across different platforms
+    with varied content types (educational, promotional, engaging, trending).
+  agent: social_media_content_manager
+  context:
+  - research_industry_trends
+  - analyze_performance_metrics
+schedule_and_publish_content:
+  description: Execute the content calendar by scheduling and publishing social media
+    posts across {target_platforms}. For each post, apply platform-specific optimizations,
+    ensure proper formatting, and schedule posts at the optimal times identified in
+    the analytics. Track posting status and maintain the content calendar with published
+    post IDs and performance tracking.
+  expected_output: A summary report of all scheduled and published posts with post
+    IDs, publication times, platforms, and initial performance metrics. Include a
+    status update on the content calendar execution with any adjustments made for
+    platform optimization.
+  agent: social_media_content_manager
+  context:
+  - create_content_calendar
